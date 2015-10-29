@@ -2,7 +2,7 @@
   "name": "cauliflower",
   "version": "0.0.1",
   "description": "A simple error handler",
-  "main": "Cauliflower.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/alkemics/cauliflower/issues"
   },
-  "homepage": "https://github.com/alkemics/cauliflower#readme"
+  "homepage": "https://github.com/alkemics/cauliflower#readme",
+  "devDependencies": {
+    "babelify": "^6.4.0"
+  }
 }
