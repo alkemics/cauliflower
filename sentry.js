@@ -1,10 +1,15 @@
+import Raven from 'raven-js';
+
 var sentry = {
   name: 'sentry',
-  catch: (...args) => {
-    console.log('HAHAHA', ...args);
+  catch: (e) => {
+    Raven.captureException(e);
   },
-  config: (apikey) => {
-    this.apikey = apikey;
+  setDSN: (dsn) => {
+    Raven.config(dsn).install();
+  },
+  setUserContext: (context) => {
+    Raven.setUserContext(context);
   }
 };
 export default sentry;
