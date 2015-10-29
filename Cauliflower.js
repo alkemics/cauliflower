@@ -4,22 +4,22 @@ export default class Cauliflower {
     this.patternCallbacks = [];
     this.simpleCallbacks = {};
     this.currentId = 0;
-    this.plugins = {};
+    this.handlers = {};
   }
 
-  addPlugin (plugin) {
-    this.plugins[plugin.name] = plugin;
+  addHandler (handler) {
+    this.handlers[handler.name] = handler;
   }
 
-  removePlugin (name) {
-    this.plugins[name];
+  removeHandler (name) {
+    this.handlers[name];
   }
 
   on (pattern, handler) {
     var id = this.currentId++;
     var callback;
     if (typeof handler === 'string') {
-      callback = plugins[handler].catch.bind(plugins[handler]);
+      callback = this.handlers[handler].catch.bind(this.handlers[handler]);
     } else {
       callback = handler;
     }
@@ -37,22 +37,20 @@ export default class Cauliflower {
 
   off (id) {
     for (var key in this.simpleCallbacks) {
-      this.simpleCallbacks[key].filter((handler) => {
+      this.simpleCallbacks[key] = this.simpleCallbacks[key].filter((handler) => {
         if (handler.id === id) return false;
         return true;
       });
     }
-    this.patternCallbacks.filter((handler) => {
+    this.patternCallbacks = this.patternCallbacks.filter((handler) => {
       if (handler.id === id) return false;
       return true;
     });
   }
 
   throw (identifier, ...args) {
-    console.log(this.simpleCallbacks);
     if (this.simpleCallbacks[identifier]) {
       this.simpleCallbacks[identifier].forEach((handler) => {
-        console.log(handler);
         handler.callback(...args);
       });
     }
