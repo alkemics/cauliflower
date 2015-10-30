@@ -51,13 +51,13 @@ export default class Cauliflower {
   throw (identifier, ...args) {
     if (this.simpleCallbacks[identifier]) {
       this.simpleCallbacks[identifier].forEach((handler) => {
-        handler.callback(...args);
+        handler.callback(identifier, ...args);
       });
     }
     if (this.patternCallbacks.length) {
       this.patternCallbacks.forEach((handler) => {
         if (identifier.match(handler.pattern) !== null) {
-          handler.callback(...args);
+          handler.callback(identifier, ...args);
         }
       });
     }

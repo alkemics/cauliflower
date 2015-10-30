@@ -10,7 +10,7 @@ describe('Cauliflower', function () {
 
   it('should respond on string pattern', function () {
     var cauliflower = new Cauliflower();
-    cauliflower.on('Error1234', function (e) {
+    cauliflower.on('Error1234', function (name, e) {
       expect(e.message).toEqual('triggered');
     });
     cauliflower.throw('NotTriggered', { message: 'should not be triggered' });
@@ -19,7 +19,7 @@ describe('Cauliflower', function () {
 
   it('should respond on regexp pattern', function () {
     var cauliflower = new Cauliflower();
-    cauliflower.on(/^Error/, function (e) {
+    cauliflower.on(/^Error/, function (name, e) {
       expect(e.message).toEqual('triggered');
     });
     cauliflower.throw('NotTriggered', { message: 'should not be triggered' });
@@ -28,7 +28,7 @@ describe('Cauliflower', function () {
 
   it('should not respond if handler is off', function () {
     var cauliflower = new Cauliflower();
-    var handlerId = cauliflower.on('Error1234', function (e) {
+    var handlerId = cauliflower.on('Error1234', function (name, e) {
       // Tricks to make test fail. This test shouldn't be triggered
       expect(false).toBe(true);
     });
@@ -41,7 +41,7 @@ describe('Cauliflower', function () {
     var cauliflower = new Cauliflower();
     var handlerMock = {
       name: 'uberHandler',
-      catch: function (e) {
+      catch: function (name, e) {
         expect(e.message).toBe('handler triggered');
       }
     };
