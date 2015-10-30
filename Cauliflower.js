@@ -1,6 +1,6 @@
 export default class Cauliflower {
 
-  constructor() {
+  constructor () {
     this.patternCallbacks = [];
     this.simpleCallbacks = {};
     this.currentId = 0;
