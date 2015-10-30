@@ -1,0 +1,39 @@
+{
+  "name": "cauliflower",
+  "version": "0.0.1",
+  "description": "A simple error handler",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/karma/bin/karma start test/karma.conf.js --single-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alkemics/cauliflower.git"
+  },
+  "keywords": [
+    "error",
+    "handler",
+    "event"
+  ],
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "author": "Alkemics",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/alkemics/cauliflower/issues"
+  },
+  "homepage": "https://github.com/alkemics/cauliflower#readme",
+  "devDependencies": {
+    "babelify": "^6.4.0",
+    "karma": "^0.13.14",
+    "karma-browserify": "^4.4.0",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "phantomjs": "^1.9.18",
+    "phantomjs-polyfill": "0.0.1",
+    "raven-js": "^1.2.0"
+  }
+}
