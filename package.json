@@ -1,10 +1,11 @@
 {
   "name": "cauliflower",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple error handler",
-  "main": "index.js",
+  "main": "dist/cauliflower.min.js",
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start test/karma.conf.js --single-run"
+    "test": "./node_modules/karma/bin/karma start test/karma.conf.js --single-run",
+    "prepublish": "node node_modules/browserify/bin/cmd.js --outfile dist/cauliflower.js --entry index.js -t babelify && node node_modules/browserify/bin/cmd.js --outfile dist/cauliflower.min.js --entry index.js -t babelify -t uglifyify"
   },
   "repository": {
     "type": "git",
@@ -15,11 +16,6 @@
     "handler",
     "event"
   ],
-  "browserify": {
-    "transform": [
-      "babelify"
-    ]
-  },
   "author": "Alkemics",
   "license": "GPL-2.0",
   "bugs": {
@@ -28,12 +24,14 @@
   "homepage": "https://github.com/alkemics/cauliflower#readme",
   "devDependencies": {
     "babelify": "^6.4.0",
+    "browserify": "^12.0.1",
     "karma": "^0.13.14",
     "karma-browserify": "^4.4.0",
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.1",
     "phantomjs": "^1.9.18",
     "phantomjs-polyfill": "0.0.1",
-    "raven-js": "^1.2.0"
+    "raven-js": "^1.2.0",
+    "uglifyify": "^3.0.1"
   }
 }
