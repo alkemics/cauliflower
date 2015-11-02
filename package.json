@@ -2,7 +2,7 @@
   "name": "cauliflower",
   "version": "0.0.2",
   "description": "A simple error handler",
-  "main": "dist/cauliflower.min.js",
+  "main": "index.js",
   "scripts": {
     "test": "./node_modules/karma/bin/karma start test/karma.conf.js --single-run",
     "prepublish": "node node_modules/browserify/bin/cmd.js --outfile dist/cauliflower.js --entry index.js -t babelify && node node_modules/browserify/bin/cmd.js --outfile dist/cauliflower.min.js --entry index.js -t babelify -t uglifyify"
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/alkemics/cauliflower#readme",
   "devDependencies": {
+    "5to6": "0.0.3",
     "babelify": "^6.4.0",
     "browserify": "^12.0.1",
     "karma": "^0.13.14",
