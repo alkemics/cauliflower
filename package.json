@@ -1,11 +1,11 @@
 {
   "name": "cauliflower",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple error handler",
-  "main": "dist/cauliflower.min.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "./node_modules/karma/bin/karma start test/karma.conf.js --single-run",
-    "prepublish": "node node_modules/browserify/bin/cmd.js --outfile dist/cauliflower.js --entry index.js -t babelify && node node_modules/browserify/bin/cmd.js --outfile dist/cauliflower.min.js --entry index.js -t babelify -t uglifyify"
+    "prepublish": "node ./node_modules/babel/bin/babel.js src/index.js --out-file dist/index.js && node ./node_modules/babel/bin/babel.js src/Cauliflower.js --out-file dist/Cauliflower.js && node ./node_modules/babel/bin/babel.js src/sentry.js --out-file dist/sentry.js"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,8 @@
     "handler",
     "event"
   ],
+  "babel": {
+  },
   "author": "Alkemics",
   "license": "GPL-2.0",
   "bugs": {
@@ -23,6 +25,7 @@
   },
   "homepage": "https://github.com/alkemics/cauliflower#readme",
   "devDependencies": {
+    "babel": "~5.8.29",
     "babelify": "^6.4.0",
     "browserify": "^12.0.1",
     "karma": "^0.13.14",

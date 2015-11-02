@@ -1,7 +1,7 @@
 'use strict';
 
 describe('Cauliflower', function () {
-  var Cauliflower = require('../Cauliflower');
+  var Cauliflower = require('../src/Cauliflower');
 
   it('should instantiate', function () {
     var cauliflower = new Cauliflower();
