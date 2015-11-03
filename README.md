@@ -1,6 +1,8 @@
 # cauliflower
 A simple error handler library
 
+[![Build Status](https://travis-ci.org/alkemics/cauliflower.svg?branch=master)](https://travis-ci.org/alkemics/cauliflower)
+
 ## Installation
 `npm install --save cauliflower`
 
