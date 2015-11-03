@@ -1,6 +1,6 @@
 {
   "name": "cauliflower",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A simple error handler",
   "main": "dist/index.js",
   "scripts": {
@@ -39,7 +39,9 @@
     "karma-phantomjs-launcher": "^0.2.1",
     "phantomjs": "^1.9.18",
     "phantomjs-polyfill": "0.0.1",
-    "raven-js": "^1.2.0",
     "uglifyify": "^3.0.1"
+  },
+  "dependencies": {
+    "raven-js": "^1.2.0"
   }
 }
