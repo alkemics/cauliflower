@@ -17,12 +17,15 @@
     "handler",
     "event"
   ],
-  "babel": {
-  },
   "author": "Alkemics",
   "license": "GPL-2.0",
   "bugs": {
     "url": "https://github.com/alkemics/cauliflower/issues"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
   },
   "homepage": "https://github.com/alkemics/cauliflower#readme",
   "devDependencies": {
