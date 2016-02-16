@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "./node_modules/karma/bin/karma start test/karma.conf.js --single-run",
-    "compile": "node ./node_modules/babel/bin/babel.js -d dist/ src/",
+    "compile": "./node_modules/.bin/babel -d dist/ src/",
     "prepublish": "npm run compile"
   },
   "repository": {
@@ -29,17 +29,21 @@
   },
   "homepage": "https://github.com/alkemics/cauliflower#readme",
   "devDependencies": {
-    "babel": "~5.8.29",
-    "babelify": "^6.4.0",
-    "browserify": "^12.0.1",
-    "jasmine-core": "^2.3.4",
-    "karma": "^0.13.14",
-    "karma-browserify": "^4.4.0",
-    "karma-jasmine": "^0.3.6",
-    "karma-phantomjs-launcher": "^0.2.1",
+    "babel-cli": "^6.5.1",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-preset-es2015": "^6.5.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.21",
+    "karma-browserify": "^5.0.1",
+    "karma-jasmine": "^0.3.7",
+    "karma-phantomjs-launcher": "^1.0.0",
     "phantomjs": "^1.9.18",
     "phantomjs-polyfill": "0.0.1",
-    "uglifyify": "^3.0.1"
+    "phantomjs-prebuilt": "^2.1.4",
+    "uglifyify": "^3.0.1",
+    "watchify": "^3.7.0"
   },
   "dependencies": {
     "raven-js": "^1.2.0"
