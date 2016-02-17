@@ -1,6 +1,6 @@
 {
   "name": "cauliflower",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "A simple error handler",
   "main": "dist/index.js",
   "scripts": {
@@ -30,8 +30,6 @@
   "homepage": "https://github.com/alkemics/cauliflower#readme",
   "devDependencies": {
     "babel-cli": "^6.5.1",
-    "babel-plugin-add-module-exports": "^0.1.2",
-    "babel-preset-es2015": "^6.5.0",
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
     "jasmine-core": "^2.4.1",
@@ -46,6 +44,8 @@
     "watchify": "^3.7.0"
   },
   "dependencies": {
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-preset-es2015": "^6.5.0",
     "raven-js": "^1.2.0"
   }
 }
