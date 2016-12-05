@@ -3,8 +3,8 @@ import Raven from 'raven-js';
 var sentry = {
   name: 'sentry',
   catch: (name, e) => {
-    sentry.setExtraContext(e);
-    Raven.captureException(name);
+    sentry.setExtraContext(name);
+    Raven.captureException(e);
   },
   setDSN: (dsn) => {
     Raven.config(dsn).install();
